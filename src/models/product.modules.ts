@@ -10,19 +10,9 @@ export const addModule = async (name: string, amount: string) => {
   return { id: insertId, name, amount };
 };
 
-export const a = 'a';
-
-// export const findAll = async () => {
-//   const [result] = await connection.execute(
-//     'SELECT * FROM Trybesmith.products',
-//   );
-//   return result;
-// };
-
-// export const findById = async (productId: number) => {
-//   const [[product]] = await connection.execute(
-//     'SELECT * FROM Trybesmith.products WHERE id = ?',
-//     [productId],
-//   );
-//   return product; 
-// };
+export const listaModulo = async () => {
+  const [lista] = await connection.execute<ResultSetHeader>(
+    'SELECT * FROM Trybesmith.products',
+  );  
+  return lista;
+};
